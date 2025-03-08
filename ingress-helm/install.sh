@@ -5,5 +5,7 @@ sleep 5
 kubectl create namespace argocd
 kubectl apply -f argocd-ingress-dev.yaml -n argocd
 
+
+
 # Install external DNS
 #helm upgrade --install external-dns external-dns/external-dns --values values.yaml
