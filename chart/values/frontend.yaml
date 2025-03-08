@@ -1,0 +1,13 @@
+initContainers:
+  enabled: false
+component: frontend
+appVersion: 1.2
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: true
+
