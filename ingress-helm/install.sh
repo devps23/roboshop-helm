@@ -5,6 +5,7 @@ sleep 5
 kubectl create namespace argocd
 kubectl apply -f argocd-ingress-dev.yaml -n argocd
 
+
 LoadBalancer = $( kubectl get svc ngx-ingres-ingress-nginx-controller | grep ngx-ingres-ingress-nginx-controller | awk '{print$4}' )
 echo $LoadBalancer
 while [ true ]; do
@@ -17,7 +18,7 @@ while [ true ]; do
 done
 sleep 10
 # to create external-dns tools  as POD in eks cluster
-kubectl apply -f external-dns-dev.yaml
+#kubectl apply -f external-dns-dev.yaml
 argocd login argocd-ingress.pdevops78.online --username admin --password $(argocd admin initial-password -n argocd | head -1) --insecure --grpc-web
 
 #argocd login argocd-ingress.pdevops78.online --username admin --password yKeioaerpccoSuC9 --insecure --skip-test-tls --grpc-web
