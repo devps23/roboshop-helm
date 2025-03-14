@@ -2,6 +2,7 @@ initContainers:
   enabled: false
 component: frontend
 appVersion: 1.2
+appName: frontend
 
 service:
   type: ClusterIP
