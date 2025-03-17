@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: {{ .Values.component }}
   namespace: argocd
@@ -7,21 +7,12 @@ metadata:
     appName: {{ .Values.appName }}
     projectName: {{ .Chart.Name }}
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      appName: {{ .Values.appName }}
-      projectName: {{ .Chart.Name }}
   template:
-    metadata:
-      labels:
-        appName: {{ .Values.appName }}
-        projectName: {{ .Chart.Name }}
     spec:
-      {{- if .Values.initContainers.enabled }}
+      {{ - if .Values.schemaContainers.enabled }}
       volumes:
         - name: vault-secret
-          emptyDir: {}
+          emptyDir: { }
       initContainers:
         - name: get-secrets
           image: public.ecr.aws/u4j6q5s8/kubernetes-vault-init-container:1.2
@@ -34,24 +25,20 @@ spec:
                   name: vault-token
                   key: token
             - name: SECRET_NAME
-              value: common/vault
+              value: {{ .Chart.Name }}-dev/{{ .Values.component }}
             - name: VAULT_SKIP_VERIFY
               value: "TRUE"
           volumeMounts:
             - name: vault-secret
               mountPath: /data
-        - name: schema
-          image: public.ecr.aws/u4j6q5s8/backend-schema:1.4
-          volumeMounts:
-            - name: vault-secret
-              mountPath: /data
-      {{- end }}
 
       containers:
-        - name: {{ .Values.component }}
-          image: 041445559784.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:{{ .Values.appVersion }}
-          {{- if .Values.initContainers.enabled }}
-          volumeMounts:
-            - name: vault-secret
-              mountPath: /data
-          {{- end }}
+        - name: schema
+          image: public.ecr.aws/u4j6q5s8/backend-schema:1.4
+          env:
+            - name: db_type
+              value: {{ .Values.schemaContainers.db_type }}
+
+      restartPolicy: Never
+  backoffLimit: 1
+  {{- end }}
