@@ -1,3 +1,4 @@
+{{ - if .Values.schemaContainers.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -9,10 +10,10 @@ metadata:
 spec:
   template:
     spec:
-      {{ - if .Values.schemaContainers.enabled }}
+
       volumes:
         - name: vault-secret
-          emptyDir: { }
+          emptyDir: {}
       initContainers:
         - name: get-secrets
           image: public.ecr.aws/u4j6q5s8/kubernetes-vault-init-container:1.2
@@ -38,7 +39,9 @@ spec:
           env:
             - name: db_type
               value: {{ .Values.schemaContainers.db_type }}
-
+          volumeMounts:
+            - name: vault-secret
+              mountPath: /data
       restartPolicy: Never
   backoffLimit: 1
   {{- end }}
