@@ -1,5 +1,7 @@
 initContainers:
   enabled: false
+schema:
+  enabled: false
 component: frontend
 appVersion: 1.0
 appName: frontend
