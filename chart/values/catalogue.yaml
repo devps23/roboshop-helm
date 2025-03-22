@@ -4,7 +4,7 @@ schema:
   enabled: true
   db_type: mongodb
 component: catalogue
-appVersion: 1.2
+appVersion: 1.0
 appName: catalogue
 
 service:
