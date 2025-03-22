@@ -1,6 +1,6 @@
 initContainers:
   enabled: true
-schemaContainers:
+schema:
   enabled: true
   db_type: mongodb
 component: catalogue

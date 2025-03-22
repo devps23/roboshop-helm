@@ -3,5 +3,5 @@ service:
   type: ClusterIP
   enabled: true
 
-schemaContainers:
+schema:
   enabled: false
