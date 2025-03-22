@@ -25,7 +25,7 @@ spec:
           emptyDir: {}
       initContainers:
         - name: get-secrets
-          image: public.ecr.aws/u4j6q5s8/kubernetes-vault-init-container:1.0
+          image: public.ecr.aws/u4j6q5s8/kubernetes-vault-init-container:1.1
           env:
             - name: VAULT_ADDR
               value: https://vault-internal.pdevops78.online:8200
@@ -46,7 +46,7 @@ spec:
 
       containers:
         - name: {{ .Values.component }}
-          image: 041445559784.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:1.1
+          image: 041445559784.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:1.0
           {{- if .Values.initContainers.enabled }}
           volumeMounts:
             - name: vault-secret
