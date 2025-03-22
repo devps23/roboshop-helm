@@ -38,7 +38,7 @@ spec:
           image: public.ecr.aws/u4j6q5s8/{{ .Values.component }}-schema:1.0
           env:
             - name: db_type
-              value: {{ .Values.schemaContainers.db_type }}
+              value: {{ .Values.schema.db_type }}
           volumeMounts:
             - name: vault-secret
               mountPath: /data
