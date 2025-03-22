@@ -1,5 +1,3 @@
-schemaContainers:
-  enabled: false
 initContainers:
   enabled: false
 component: frontend
