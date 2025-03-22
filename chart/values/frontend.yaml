@@ -1,7 +1,7 @@
 initContainers:
   enabled: false
 component: frontend
-appVersion: 1.2
+appVersion: 1.0
 appName: frontend
 
 service:
