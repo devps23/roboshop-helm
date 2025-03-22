@@ -1,9 +1,11 @@
+initContainers:
+  enabled: true
 schemaContainers:
-  enabled: false
+  enabled: true
   db_type: mongodb
 component: catalogue
 appVersion: 1.2
-appName: ctalogue
+appName: catalogue
 
 service:
   type: ClusterIP

@@ -18,6 +18,7 @@ spec:
         appName: {{ .Values.appName }}
         projectName: {{ .Chart.Name }}
     spec:
+#      when initContainers enabled is true
       {{- if .Values.initContainers.enabled }}
       volumes:
         - name: vault-secret
@@ -40,16 +41,12 @@ spec:
           volumeMounts:
             - name: vault-secret
               mountPath: /data
-        - name: schema
-          image: public.ecr.aws/u4j6q5s8/backend-schema:1.0
-          volumeMounts:
-            - name: vault-secret
-              mountPath: /data
+
       {{- end }}
 
       containers:
         - name: {{ .Values.component }}
-          image: 041445559784.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:1.0
+          image: 041445559784.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:{{ .Values.appVersion }}
           {{- if .Values.initContainers.enabled }}
           volumeMounts:
             - name: vault-secret
