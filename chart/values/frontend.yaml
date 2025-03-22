@@ -13,4 +13,5 @@ service:
 
 ingress:
   enabled: true
+  host: frontend-dev.pdevops78.online
 

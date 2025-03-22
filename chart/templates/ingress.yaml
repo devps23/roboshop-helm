@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: frontend-dev.pdevops78.online
+    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - path: /
