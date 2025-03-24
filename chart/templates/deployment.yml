@@ -46,7 +46,7 @@ spec:
 
       containers:
         - name: {{ .Values.component }}
-          image: 041445559784.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:1.2
+          image: 041445559784.dkr.ecr.us-east-1.amazonaws.com/{{ .Chart.Name }}-{{ .Values.component }}:1.3
           {{- if .Values.initContainers.enabled }}
           volumeMounts:
             - name: vault-secret
