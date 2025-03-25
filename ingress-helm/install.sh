@@ -4,7 +4,7 @@ helm upgrade -i ngx-ingres ingress-nginx/ingress-nginx -f ingress.yaml
 sleep 5
 kubectl create namespace argocd
 kubectl apply -f argocd-ingress-dev.yaml -n argocd
- kubectl create secret  generic  vault-token --from-literal=token=hvs.T8WnPWmYmGZkPYlGAHXVmebk -n argocd
+kubectl create secret  generic  vault-token --from-literal=token=hvs.T8WnPWmYmGZkPYlGAHXVmebk -n argocd
 
 LoadBalancer = $( kubectl get svc ngx-ingres-ingress-nginx-controller | grep ngx-ingres-ingress-nginx-controller | awk '{print$4}' )
 echo $LoadBalancer
