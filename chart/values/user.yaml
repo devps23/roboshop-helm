@@ -1,0 +1,17 @@
+initContainers:
+  enabled: true
+schema:
+  enabled: true
+  db_type: mongodb
+component: user
+appVersion: 1.0
+appName: user
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: true
+  host: user-dev.pdevops78.online
