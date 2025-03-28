@@ -1,7 +1,7 @@
 initContainers:
   enabled: true
 schema:
-  enabled: true
+  enabled: false
 component: cart
 project_name: roboshop
 appVersion: 1.7

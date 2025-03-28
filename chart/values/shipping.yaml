@@ -2,8 +2,8 @@ initContainers:
   enabled: true
 schema:
   enabled: true
+  db_type: mysql
 component: shipping
-project_name: roboshop
 appVersion: 1.7
 appName: shipping
 
