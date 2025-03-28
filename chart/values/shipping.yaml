@@ -13,5 +13,4 @@ service:
   targetPort: 8080
 
   ingress:
-    enabled: true
-    host: shipping-dev.pdevops78.online
+    enabled: false
