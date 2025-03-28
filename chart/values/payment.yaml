@@ -1,0 +1,14 @@
+initContainers:
+  enabled: true
+schema:
+  enabled: true
+
+component: payment
+appVersion: 1.7
+appName: payment
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080
+

@@ -1,0 +1,17 @@
+initContainers:
+  enabled: true
+schema:
+  enabled: true
+component: shipping
+project_name: roboshop
+appVersion: 1.7
+appName: shipping
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080
+
+  ingress:
+    enabled: true
+    host: shipping-dev.pdevops78.online

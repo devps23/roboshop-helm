@@ -1,15 +1,16 @@
 initContainers:
   enabled: true
 schema:
-  enabled: false
+  enabled: true
 component: cart
-appVersion: 1.0
+project_name: roboshop
+appVersion: 1.7
 appName: cart
 
 service:
   type: ClusterIP
-  port: 80
-  targetPort: 80
+  port: 8080
+  targetPort: 8080
 
 ingress:
   enabled: true
