@@ -13,9 +13,14 @@ done
 
 sleep10
 
+  argocdpass = argocd admin initial-password -n argocd | head -1
 while [ true ];
 do
-  argocd admin initial-password -n argocd | head -1
+  echo $argocdpass
+  if [ $? eq 0 ]; then
+    echo "argocd password not exists "
+    break;
+  fi
 done
 
 sleep 2
