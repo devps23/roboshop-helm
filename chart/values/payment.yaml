@@ -1,5 +1,6 @@
 initContainers:
   enabled: true
+
 schema:
   enabled: true
 

@@ -1,9 +1,10 @@
 initContainers:
   enabled: true
+
 schema:
   enabled: false
 component: cart
-project_name: roboshop
+
 appVersion: 1.7
 appName: cart
 
@@ -13,5 +14,4 @@ service:
   targetPort: 8080
 
 ingress:
-  enabled: true
-  host: cart-dev.pdevops78.online
+  enabled: false

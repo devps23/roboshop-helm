@@ -1,19 +1,26 @@
+# this initContainers is for vault init container to get secrets form vault
 initContainers:
   enabled: true
+
+# this is for to load schema in job.yaml
 schema:
   enabled: true
   db_type: mongodb
+
 component: catalogue
-project_name: roboshop
 appVersion: 1.3
 appName: catalogue
 
+# the below values pass to the service
 service:
   type: ClusterIP
   port: 8080
   targetPort: 8080
 
+# this is the ingress values to attach the service to ingress to route the traffic
+# here no need to route the traffic (ingress.yaml)
+
 ingress:
-  enabled: true
-  host: catalogue-dev.pdevops78.online
+  enabled: false
+
 

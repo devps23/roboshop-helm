@@ -1,16 +1,23 @@
+# this initContainers is for vault init container to get secrets form vault
+# initContainers not required for freontend
 initContainers:
   enabled: false
+
+# schema not required for frontend
 schema:
   enabled: false
+
 component: frontend
 appVersion: 1.0
 appName: frontend
 
+# this is the frontend service
 service:
   type: ClusterIP
   port: 80
   targetPort: 80
 
+# required ingress to expose application outside
 ingress:
   enabled: true
   host: frontend-dev.pdevops78.online
