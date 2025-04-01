@@ -1,2 +1,23 @@
-prometheus:
+# this initContainers is for vault init container to get secrets form vault
+# initContainers not required for freontend
+initContainers:
+  enabled: false
+
+# schema not required for frontend
+schema:
+  enabled: false
+
+component: prometheus
+appVersion: 0
+appName: prometheus
+
+# this is the frontend service
+service:
+  type: ClusterIP
+  port: 9090
+  targetPort: 9090
+
+# required ingress to expose application outside
+ingress:
   enabled: true
+  host: prometheus-dev.pdevops78.online
