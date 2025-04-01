@@ -31,4 +31,5 @@ for app in frontend catalogue user cart shipping payment; do
 argocd app create {{app}} --repo https://github.com/devps23/roboshop-helm.git --path chart --dest-server https://kubernetes.default.svc --dest-namespace default.svc --grpc-web --values values/{{app}}.yaml
 
 argocd app sync {{app}}
+
 done
