@@ -1,0 +1,3 @@
+component: prometheus
+ingress:
+  host: prometheus-dev.pdevops78.online
