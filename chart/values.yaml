@@ -9,3 +9,6 @@ schema:
 
 ingress:
   enabled: false
+
+prometheus:
+  enabled: false
