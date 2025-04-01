@@ -2,7 +2,7 @@ initContainers:
   enabled: true
 
 schema:
-  enabled: false
+  enabled: true
 component: cart
 
 appVersion: 1.7
