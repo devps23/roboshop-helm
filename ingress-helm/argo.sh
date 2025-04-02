@@ -4,7 +4,7 @@ echo $loadbalancer
 while [ true ];
 do
    nslookup  $loadbalancer
-   if [ $? eq 0 ]; then
+   if [ $? -eq 0 ]; then
       echo "Load balancer not exists"
       break;
    fi
@@ -17,7 +17,7 @@ sleep10
 while [ true ];
 do
   echo $argocdpass
-  if [ $? eq 0 ]; then
+  if [ $? -eq 0 ]; then
     echo "argocd password not exists "
     break;
   fi
