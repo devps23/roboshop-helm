@@ -2,12 +2,11 @@ initContainers:
   enabled: true
 
 schema:
-  enabled: true
-  db_type: mongodb
+  enabled: false
 
 component: user
 project_name: roboshop
-appVersion: 1.7
+appVersion: 2.1
 appName: user
 
 service:
