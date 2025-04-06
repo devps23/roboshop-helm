@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kibana
+  namespace: elastic-stack
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: kibana-dev.pdevops78.online
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: kibana-dev.pdevops78.online
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: es-kb-quickstart-eck-kibana-kb-http
+                port:
+                  number: 5601
+            path: /

@@ -33,6 +33,7 @@ helm repo update
 kubectl create -f https://download.elastic.co/downloads/eck/2.16.1/crds.yaml
 kubectl apply -f https://download.elastic.co/downloads/eck/2.16.1/operator.yaml
 helm install es-kb-quickstart elastic/eck-stack -n elastic-stack --create-namespace
+kubectl apply -f elk.yaml
 
 
 
