@@ -38,6 +38,9 @@ ES_PASSWORD=$(kubectl get secrets -n elastic-stack elasticsearch-es-elastic-user
 sed -e "s/ES_PASSWORD/${ES_PASSWORD}/g" logstash.yaml >/tmp/logstash.yaml
 kubectl apply -f /tmp/logstash.yaml
 
+# filebeat
+helm upgrade -i filebeat elastic/filebeat -f filebeat.yaml
+
 
 
 
