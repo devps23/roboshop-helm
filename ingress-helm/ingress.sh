@@ -40,6 +40,9 @@ kubectl apply -f /tmp/logstash.yaml
 
 # filebeat
 helm upgrade -i filebeat elastic/filebeat -f filebeat.yaml
+# autoscaler
+helm repo add autoscaler https://kubernetes.github.io/autoscaler
+helm upgrade -i node-autoscaler autoscaler/cluster-autoscaler --set 'autoDiscovery.clusterName'=dev-eks
 
 
 
