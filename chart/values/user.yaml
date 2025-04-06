@@ -5,7 +5,7 @@ schema:
   enabled: false
 
 component: user
-project_name: roboshop
+
 appVersion: 2.1
 appName: user
 

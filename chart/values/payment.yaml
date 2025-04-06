@@ -2,10 +2,10 @@ initContainers:
   enabled: true
 
 schema:
-  enabled: true
+  enabled: false
 
 component: payment
-appVersion: 1.7
+appVersion: 2.1
 appName: payment
 
 service:

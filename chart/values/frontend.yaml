@@ -8,7 +8,7 @@ schema:
   enabled: false
 
 component: frontend
-appVersion: 1.0
+appVersion: 2.1
 appName: frontend
 
 # this is the frontend service
