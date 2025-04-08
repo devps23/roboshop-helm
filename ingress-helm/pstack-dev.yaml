@@ -6,3 +6,6 @@ prometheus:
       external-dns.alpha.kubernetes.io/hostname: prometheus-dev.pdevops78.online
     hosts:
       - prometheus-dev.pdevops78.online
+
+
+

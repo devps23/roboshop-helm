@@ -15,7 +15,10 @@ spec:
           - pathType: Prefix
             backend:
               service:
-                name: es-kb-quickstart-eck-kibana-kb-http
+                name: elk-eck-kibana-kb-http
                 port:
                   number: 5601
             path: /
+
+
+# add external dns for kibana
