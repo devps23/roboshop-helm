@@ -6,7 +6,7 @@ schema:
 
 component: cart
 
-appVersion: 2.1
+appVersion: 2.0
 appName: cart
 
 service:
