@@ -8,7 +8,7 @@ schema:
   db_type: mongodb
 
 component: catalogue
-appVersion: 2.1
+appVersion: 2.2
 appName: catalogue
 
 # the below values pass to the service
