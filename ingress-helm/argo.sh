@@ -1,29 +1,29 @@
-loadbalancer = $(kubectl get ingress -A | grep argocd | awk '{print $4}' | tail -1)
-echo $loadbalancer
-
-while [ true ];
-do
-   nslookup  $loadbalancer
-   if [ $? -eq 0 ]; then
-      echo "Load balancer not exists"
-      break;
-   fi
-   echo "Please wait until load balancer is active"
-done
-
-sleep10
-
-  argocdpass = argocd admin initial-password -n argocd | head -1
-while [ true ];
-do
-  echo $argocdpass
-  if [ $? -eq 0 ]; then
-    echo "argocd password not exists "
-    break;
-  fi
-done
-
-sleep 2
+#loadbalancer = $(kubectl get ingress -A | grep argocd | awk '{print $4}' | tail -1)
+#echo $loadbalancer
+#
+#while [ true ];
+#do
+#   nslookup  $loadbalancer
+#   if [ $? -eq 0 ]; then
+#      echo "Load balancer not exists"
+#      break;
+#   fi
+#   echo "Please wait until load balancer is active"
+#done
+#
+#sleep10
+#
+#  argocdpass = argocd admin initial-password -n argocd | head -1
+#while [ true ];
+#do
+#  echo $argocdpass
+#  if [ $? -eq 0 ]; then
+#    echo "argocd password not exists "
+#    break;
+#  fi
+#done
+#
+#sleep 2
 
 argocd login $( kubectl get ingress -A | grep argocd | awk '{print $4}' | tail -1)  --username admin --password $(argocd admin initial-password -n argocd | head -1) --insecure --skip-test-tls --grpc-web
 
