@@ -5,7 +5,7 @@ schema:
   enabled: false
 
 component: payment
-appVersion: 2.1
+appVersion: 1.7
 appName: payment
 
 service:
