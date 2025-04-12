@@ -1,3 +1,4 @@
+{{- if .Values.service.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -13,8 +14,9 @@ spec:
       port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.targetPort }}
   type: {{ .Values.service.type }}
+{{- end }}
 
-
-
+# by default service is enabled
+# for dispatch component service is not necessary
 #  ExpenseApp123----DB_PASS
 #expense----DB_USER

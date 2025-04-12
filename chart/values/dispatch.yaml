@@ -1,0 +1,21 @@
+# this initContainers is for vault init container to get secrets form vault
+initContainers:
+  enabled: true
+
+# this is for to load schema in job.yaml
+schema:
+  enabled: false
+
+component: dispatch
+appVersion: 2.2
+appName: dispatch
+
+# the below values pass to the service
+service:
+  enabled: false
+
+# this is the ingress values to attach the service to ingress to route the traffic
+# here no need to route the traffic (ingress.yaml)
+
+ingress:
+  enabled: false
