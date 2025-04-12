@@ -4,6 +4,7 @@ initContainers:
 schema:
   enabled: true
   db_type: mysql
+  schemaVersion: 1.2
 
 component: shipping
 appVersion: 1.3

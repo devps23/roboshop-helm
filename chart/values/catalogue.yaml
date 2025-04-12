@@ -6,6 +6,7 @@ initContainers:
 schema:
   enabled: true
   db_type: mongodb
+  schemaVersion: 2.1
 
 component: catalogue
 appVersion: 2.2
