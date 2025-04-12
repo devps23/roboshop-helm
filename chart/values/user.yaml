@@ -6,7 +6,7 @@ schema:
 
 component: user
 
-appVersion: 2.0
+appVersion: 1.2
 appName: user
 
 service:
