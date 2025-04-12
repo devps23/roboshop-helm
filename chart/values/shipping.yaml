@@ -6,7 +6,7 @@ schema:
   db_type: mysql
 
 component: shipping
-appVersion: 2.1
+appVersion: 1.3
 appName: shipping
 
 service:
