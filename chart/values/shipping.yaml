@@ -7,7 +7,7 @@ schema:
   schemaVersion: 1.1
 
 component: shipping
-appVersion: 1.7
+appVersion: 2.2
 appName: shipping
 
 service:
