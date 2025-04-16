@@ -33,7 +33,7 @@ helm repo update
 kubectl create -f https://download.elastic.co/downloads/eck/2.16.1/crds.yaml
 kubectl apply -f https://download.elastic.co/downloads/eck/2.16.1/operator.yaml
 helm install es-kb-quickstart elastic/eck-stack -n elastic-stack --create-namespace
-kubectl apply -f elk.yaml
+kubectl apply -f kibana-ingress.yaml
 ES_PASSWORD=$(kubectl get secrets -n elastic-stack elasticsearch-es-elastic-user -o json | jq '.data.elastic' | sed -e 's/"//g' | base64 --decode)
 sed -e "s/ES_PASSWORD/${ES_PASSWORD}/g" logstash.yaml >/tmp/logstash.yaml
 kubectl apply -f /tmp/logstash.yaml
