@@ -15,7 +15,7 @@ spec:
           - pathType: Prefix
             backend:
               service:
-                name: elk-eck-kibana-kb-http
+                name: es-kb-quickstart-eck-kibana-kb-http
                 port:
                   number: 5601
             path: /
