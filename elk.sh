@@ -64,7 +64,7 @@ spec:
             ssl_certificate_authorities => none
           }
         }
-#        the above output block is used to send this logstash logs to elasticsearch
+#        the above output.tf block is used to send this logstash logs to elasticsearch
   services:
     - name: beats
       service:

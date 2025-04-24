@@ -39,6 +39,7 @@ daemonset:
 
       output.logstash:
         hosts: 'logstash-ls-beats:5044'
+  # this output.tf.logstash send data to
   # Only used when updateStrategy is set to "RollingUpdate"
   maxUnavailable: 1
   nodeSelector: {}
